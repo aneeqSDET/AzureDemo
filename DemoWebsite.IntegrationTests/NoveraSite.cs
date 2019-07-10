@@ -19,7 +19,6 @@ namespace DemoWebsite.IntegrationTests
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
-
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
                 driver.Url = "http://www.novera.com/";
