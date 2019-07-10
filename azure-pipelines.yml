@@ -1,5 +1,5 @@
 # Author: Aneeq H. Khan
-# Build CI 
+# Build CI For the Demo Site Hosted on Azure
 
 trigger:
 - master
@@ -11,11 +11,19 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+  displayName: 'Running Unit Tests'
+  inputs:
+    command: test
+    projects: '**/*UnitTests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'Building Project'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publishing Project'
   inputs:
     command: publish
     publishWebProjects: false
@@ -24,4 +32,4 @@ steps:
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
-  displayName: 'publish artifacts'
+  displayName: 'Publishing Artifacts'
