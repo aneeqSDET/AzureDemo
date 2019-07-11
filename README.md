@@ -1,8 +1,10 @@
 # DemoWebsite
 This project is created to demonstrate the development of full CI/CD Pipeline Using Azure DevOps.
-Code Repo: GitHub
-CI/CD: Azure DevOps
-Target Server: Windows Server on Azure
+
+Code Repo: GitHub.
+CI/CD: Azure DevOps.
+Target Server: Windows Server on Azure.
+
 This GitHub Repo contains 
   1. A Website Project to demonstrate the deployment of the basic .Net Core MVC Web Application to Azure.
   2. An XUnit Project that contains very basic unit tests for the controllers.
