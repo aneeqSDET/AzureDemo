@@ -39,7 +39,6 @@ namespace DemoWebsite.IntegrationTests
                 IWebElement Heading = driver.FindElementByXPath("//*[@id='infoHeading']");
                 Assert.AreEqual("Launching Soon", Heading.Text);
             }
-            //id=infoHeading
         }
     }
 }
