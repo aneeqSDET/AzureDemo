@@ -11,33 +11,34 @@ using System.Threading.Tasks;
 namespace DemoWebsite.IntegrationTests
 {
     [TestClass]
-    public class NoveraSite
+    public class Finastra
 
     {
         [TestMethod]
-        public void SloganTest()
+        public void NameTest()
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
-                driver.Url = "http://www.novera.com/";
-                Assert.IsTrue(driver.PageSource.Contains("The Future of Finance is Powered by Novera"));
+                driver.Url = "https://www.finastra.com/";
+                Assert.IsTrue(driver.PageSource.Contains("Finastra"));
 
             }
 
         }
         [TestMethod]
-        public void HeadingTest()
+        public void FooterTest()
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
 
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
-                driver.Url = "http://www.novera.com/";
-                IWebElement Heading = driver.FindElementByXPath("//*[@id='infoHeading']");
-                Assert.AreEqual("Launching Soon", Heading.Text);
+                driver.Url = "https://www.finastra.com/";
+                IWebElement Heading = driver.FindElementByXPath("/html/body/div[1]/footer/div/div/div/div/div[4]/div/p");
+                Assert.IsTrue(Heading.Text.Contains("Finastra. All rights reserved"));
+                ///html/body/div[1]/footer/div/div/div/div/div[4]/div/p //*[@id='infoHeading']
             }
         }
     }
