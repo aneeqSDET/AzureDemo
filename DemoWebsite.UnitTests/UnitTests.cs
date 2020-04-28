@@ -10,7 +10,7 @@ using DemoWebsite.Controllers;
 
 namespace DemoWebsite.UnitTests
 {
-    public class HomePage
+    public class UnitTests
     {
         [Fact]
         public void IndexUnitTest()
