@@ -1,4 +1,4 @@
-# DemoWebsite
+# Azure DevOps Demo
 This project is created to demonstrate the development of full CI/CD Pipeline Using Azure DevOps.
 
 Code Repo: GitHub.
