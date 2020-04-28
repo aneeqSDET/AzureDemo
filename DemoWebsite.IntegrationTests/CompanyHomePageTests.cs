@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace DemoWebsite.IntegrationTests
 {
     [TestClass]
-    public class Finastra
+    public class CompanyHomePageTests
 
     {
         [TestMethod]
