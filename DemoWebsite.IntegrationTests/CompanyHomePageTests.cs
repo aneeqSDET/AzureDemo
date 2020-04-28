@@ -21,8 +21,8 @@ namespace DemoWebsite.IntegrationTests
             chromeOptions.AddArguments("headless");
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
-                driver.Url = "https://www.finastra.com/";
-                Assert.IsTrue(driver.PageSource.Contains("Finastra"));
+                driver.Url = "https://www.tempoe.com/";
+                Assert.IsTrue(driver.PageSource.Contains("TEMPOE"));
 
             }
 
