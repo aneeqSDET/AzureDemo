@@ -21,9 +21,8 @@ namespace DemoWebsite.IntegrationTests
             chromeOptions.AddArguments("headless");
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
-                driver.Url = "https://www.tempoe.com/";
-                Assert.IsTrue(driver.PageSource.Contains("TEMPOE"));
-
+                driver.Url = "https://www.abacusnext.com/";
+                Assert.IsTrue(driver.PageSource.Contains("AbacusNext"));
             }
 
         }
@@ -35,10 +34,10 @@ namespace DemoWebsite.IntegrationTests
 
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
             {
-                driver.Url = "https://www.finastra.com/";
-                IWebElement Heading = driver.FindElementByXPath("/html/body/div[1]/footer/div/div/div/div/div[4]/div/p");
-                Assert.IsTrue(Heading.Text.Contains("Finastra. All rights reserved"));
-                ///html/body/div[1]/footer/div/div/div/div/div[4]/div/p //*[@id='infoHeading']
+                driver.Url = "https://www.abacusnext.com/";
+                IWebElement Footer = driver.FindElementByXPath("/html/body/footer/div/div[2]");
+                Assert.IsTrue(Footer.Text.Contains("AbacusNext"));
+                //Footer
             }
         }
     }
